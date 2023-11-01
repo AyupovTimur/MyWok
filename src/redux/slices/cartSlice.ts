@@ -62,7 +62,9 @@ export const cartSlice = createSlice({
 
         removeItems(state, action: PayloadAction<CartItem>) {
 
-            state.items = state.items.filter(obj => obj.id !== action.payload.id )
+            state.items = state.items.filter(obj => obj.id !== action.payload.id ||
+                obj.type !== action.payload.type ||
+                obj.size !== action.payload.size)
 
             state.totalPrice = state.items.reduce((sum, obj) => {
                 return (obj.price * obj.count) + sum;
