@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    a {
+        margin-left: 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 26px;
+        width: 39px;
+        border-radius: 100%;
+        color: #232323;
+        cursor: pointer;
+        border: 2px solid #A52A2A;
+
+        &:hover {
+            background-color: #A52A2A;
+        }
+    }
+
+    :global {
+        .selected {
+            a {
+                background-color: #A52A2A;
+                color: white;
+            }
+        }
+    }
+}
